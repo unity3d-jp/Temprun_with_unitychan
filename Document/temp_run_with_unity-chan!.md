@@ -424,7 +424,7 @@ public class Player : MonoBehaviour {
 public float speed = 6;
 
 // (2)
-rigidbody.MovePosition (transform.position + transform.forward * Time.deltaTime * speed);
+GetComponent<Rigidbody>().MovePosition (transform.position + transform.forward * Time.deltaTime * speed);
 ```
 
 補足しておくと、Updateの{から}内に記述したソースコードは、毎フレーム呼び出され実行されます。そのため今回記述した(2)の処理は毎フレームSpeedで指定した速度の分だけ前進するといった内容になります。
@@ -451,7 +451,7 @@ public class Player : MonoBehaviour {
 	void Update () {
 
 		// (2)
-		rigidbody.MovePosition (transform.position + transform.forward * Time.deltaTime * speed);
+		GetComponent<Rigidbody>().MovePosition (transform.position + transform.forward * Time.deltaTime * speed);
 
 	}
 }
